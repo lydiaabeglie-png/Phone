@@ -17,6 +17,16 @@
             --transition: all 0.3s ease;
         }
         
+        /* Dark mode variables */
+        .dark-mode {
+            --primary: #7986cb;
+            --secondary: #f48fb1;
+            --accent: #80deea;
+            --dark: #1a237e;
+            --light: #121212;
+            --gray: #b0bec5;
+        }
+        
         * {
             margin: 0;
             padding: 0;
@@ -29,6 +39,11 @@
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dark-mode body {
+            color: #e0e0e0;
         }
         
         .container {
@@ -95,6 +110,56 @@
             cursor: pointer;
         }
         
+        /* Mobile Navigation */
+        .mobile-nav {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--dark);
+            z-index: 999;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .mobile-nav.active {
+            display: flex;
+        }
+        
+        .mobile-nav ul {
+            list-style: none;
+            text-align: center;
+        }
+        
+        .mobile-nav li {
+            margin: 20px 0;
+        }
+        
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .mobile-nav a:hover {
+            color: var(--accent);
+        }
+        
+        .close-menu {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(18, 24, 88, 0.8), rgba(18, 24, 88, 0.9)), url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80');
@@ -133,6 +198,8 @@
             font-weight: 600;
             transition: var(--transition);
             box-shadow: 0 4px 15px rgba(255, 64, 129, 0.4);
+            border: none;
+            cursor: pointer;
         }
         
         .cta-button:hover {
@@ -159,11 +226,21 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dark-mode .main-content {
+            background: #1e1e1e;
+            color: #e0e0e0;
         }
         
         .section {
             padding: 40px;
             border-bottom: 1px solid #eee;
+        }
+        
+        .dark-mode .section {
+            border-bottom: 1px solid #333;
         }
         
         .section:last-child {
@@ -237,6 +314,10 @@
             cursor: pointer;
         }
         
+        .dark-mode .timeline-content {
+            background: #2d2d2d;
+        }
+        
         .timeline-content:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
@@ -288,6 +369,10 @@
             position: relative;
         }
         
+        .dark-mode .phone-evolution {
+            background: linear-gradient(to top, #1a237e, #121858);
+        }
+        
         .phone-era {
             display: flex;
             flex-direction: column;
@@ -320,6 +405,10 @@
         .era-label {
             font-weight: 600;
             color: var(--primary);
+        }
+        
+        .dark-mode .era-label {
+            color: var(--accent);
         }
         
         .era-year {
@@ -355,15 +444,29 @@
             transition: var(--transition);
         }
         
+        .dark-mode .ad-box {
+            background: #2d2d2d;
+            border-color: #555;
+            color: #aaa;
+        }
+        
         .ad-box:hover {
             border-color: var(--accent);
             background: #f0f7ff;
+        }
+        
+        .dark-mode .ad-box:hover {
+            background: #333;
         }
         
         .ad-title {
             font-weight: 600;
             margin-bottom: 10px;
             color: var(--primary);
+        }
+        
+        .dark-mode .ad-title {
+            color: var(--accent);
         }
         
         /* Sidebar */
@@ -378,6 +481,12 @@
             border-radius: 15px;
             padding: 25px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dark-mode .sidebar-widget {
+            background: #1e1e1e;
+            color: #e0e0e0;
         }
         
         .sidebar-widget h3 {
@@ -408,9 +517,17 @@
             cursor: pointer;
         }
         
+        .dark-mode .fact-box {
+            background: #2d2d2d;
+        }
+        
         .fact-box:hover {
             background: #e3f2fd;
             transform: translateX(5px);
+        }
+        
+        .dark-mode .fact-box:hover {
+            background: #333;
         }
         
         .fact-box h4 {
@@ -433,6 +550,11 @@
             padding: 15px;
             background: #f0f7ff;
             border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .dark-mode .stat {
+            background: #2d2d2d;
         }
         
         .stat-value {
@@ -453,6 +575,12 @@
             padding: 30px;
             margin: 40px 0;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dark-mode .quiz-container {
+            background: #1e1e1e;
+            color: #e0e0e0;
         }
         
         .quiz-question {
@@ -477,8 +605,16 @@
             text-align: center;
         }
         
+        .dark-mode .quiz-option {
+            background: #2d2d2d;
+        }
+        
         .quiz-option:hover {
             background: #e3f2fd;
+        }
+        
+        .dark-mode .quiz-option:hover {
+            background: #333;
         }
         
         .quiz-option.selected {
@@ -493,6 +629,11 @@
             border-radius: 8px;
             margin-top: 20px;
             display: none;
+        }
+        
+        .dark-mode .quiz-result {
+            background: #1b5e20;
+            color: #e0e0e0;
         }
         
         /* Footer */
@@ -562,7 +703,11 @@
             }
             
             nav ul {
-                gap: 15px;
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
             }
             
             .hero h1 {
@@ -673,6 +818,20 @@
             </div>
         </div>
     </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">Timeline</a></li>
+            <li><a href="#">Gallery</a></li>
+            <li><a href="#">Statistics</a></li>
+            <li><a href="#">Future</a></li>
+        </ul>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1102,10 +1261,30 @@
                 icon.classList.add('fa-moon');
             }
         });
+        
+        // Mobile menu functionality
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+        });
+        
+        closeMenu.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileNav.classList.remove('active');
+            });
+        });
     </script>
+    
+    <!-- AdSense Script -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5680503121505645"
+     crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5680503121505645"
-     crossorigin="anonymous"></script>
